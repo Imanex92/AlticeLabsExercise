@@ -13,11 +13,13 @@ public class LabSeqService {
 
         if (n == 0) return 0;
         if (n == 1) return 1;
+        if (n == 2) return 0;
+        if (n == 3) return 1;
         if (cache.containsKey(n)) return cache.get(n);
-
         long result = getLabSeqValue(n - 4) + getLabSeqValue(n - 3);
         cache.put(n, result);
-
         return result;
+
+
     }
 }
